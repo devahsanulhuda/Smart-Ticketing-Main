@@ -60,7 +60,7 @@
                     </ul>
                 </div>
                 <div class="navbar-end flex ">
-                    <a
+                    <a href="#bus-ticket"
                         class="btn text-lg font-bold  hover:bg-gray-300 hover:text-[#1DD100] border-[#1DD100] text-[#1DD100]">Bus<img
                             src="images/bus-icon.png" alt=""></a>
 
@@ -116,7 +116,8 @@
                 <h1 class="text-5xl font-bold">Best offers for you</h1>
                 <div class="lg:flex gap-6 lg:h-[220px] my-12 ">
                     <!-- coupon card-1 -->
-                    <div class="flex flex-1 justify-center text-black items-center bg-[#FFBF0F] rounded-3xl px-5 lg:p-8">
+                    <div
+                        class="flex flex-1 justify-center text-black items-center bg-[#FFBF0F] rounded-3xl px-5 lg:p-8">
                         <div class="font-[Inter] ">
                             <h3 class=" font-black text-2xl lg:text-4xl">15% OFF
                             </h3>
@@ -150,18 +151,18 @@
                     </div>
                 </div>
                 <button
-                class="bg-white mt-20 text-center hover:bg-[#1DD100] text-[#1DD100] hover:text-white py-4 px-6 rounded-lg border-solid border-2 border-[#1DD100] focus:outline-none">See
-                All Offers</button>
+                    class="bg-white mt-20 text-center hover:bg-[#1DD100] text-[#1DD100] hover:text-white py-4 px-6 rounded-lg border-solid border-2 border-[#1DD100] focus:outline-none">See
+                    All Offers</button>
 
             </div>
 
-          
+
         </section>
     </header>
 
     <!-- start main section -->
 
-    <main id="main" class="  border-t-4 border-[#1DD100] mt-16 rounded-t-3xl bg-slate-200">
+    <main id="main" class=" border-t-4 border-[#1DD100] mt-16 rounded-t-3xl bg-slate-200">
         <section class="w-[1170px] mx-auto">
             <div class="text-center mt-16">
                 <h1 id="bus-ticket" class="text-5xl py-12 font-bold">Ahsan Paribahan</h1>
@@ -229,7 +230,7 @@
         <section class="w-[1170px] pb-40  mt-16 mx-auto ">
             <div class=" flex gap-7 pt-10  pb-10 bg-white rounded-3xl ">
                 <div class="pl-10 ">
-                    <div class="pr-12 border-r-[#1DD100] border-dashed border-r ">
+                    <div class="pr-12 border-r-gray-400 border-dashed border-r ">
                         <div class="">
                             <h3 class="text-2xl font-semibold pb-4">Select Your Seat</h3>
                             <hr class="border-dashed">
@@ -243,13 +244,14 @@
                                     <a class="text-xl font-semibold text-[#1DD100]" href="">Selected</a>
                                 </div>
                             </div>
-                            <div>
-                                <img src="images/" alt="">
-                                <h2></h2>
-                            </div>
+
                         </div>
 
                         <hr class="border-dashed">
+                        <div class="flex justify-end mt-4">
+                            <button class="bg-[#0307121A] px-6 py-2 rounded-xl bg-opacity-10"><img
+                                    src="images/Vector.png" alt=""></button>
+                        </div>
                         <div>
                             <button>
 
@@ -362,26 +364,29 @@
                             <h2 class="text-base font-semibold">BDT <span id="grand-total">000</span></h2>
                         </div>
                     </div>
-                    <div class="space-y-4 mt-4">
-                        <div class="space-y-4 ">
+                    <form class="space-y-4 mt-4">
+                        <label class="space-y-4 ">
                             <h2 class="text-base font-bold">Passenger Name*</h2>
-                            <input type="text" placeholder="Enter your name" class="input input-bordered  w-full" />
-                        </div>
-                        <div class="space-y-4 ">
-                            <h2 class="text-base font-bold">Phone Number*</h2>
-                            <input type="text" placeholder="Enter your phone number"
+                            <input type="text" id="name" required placeholder="Enter your name"
                                 class="input input-bordered  w-full" />
-                        </div>
-                        <div class="space-y-4 ">
+                        </label>
+                        <label class="space-y-4 ">
+                            <h2 class="text-base font-bold">Phone Number*</h2>
+                            <input type="tel" id="number" required placeholder="Enter your phone number"
+                                class="input input-bordered  w-full" />
+                        </label>
+                        <label class="space-y-4 ">
                             <h2 class="text-base font-bold">Email ID</h2>
-                            <input type="text" placeholder="Enter your email id" class="input input-bordered  w-full" />
-                        </div>
-                        <button class="bg-[#1DD100] text-white w-full btn">Next</button>
+                            <input type="text" id="email" required placeholder="Enter your email id"
+                                class="  input input-bordered  w-full" />
+                        </label>
+                        <button onclick="my_modal_5.showModal()" type="submit" id="submit"
+                            class="bg-[#1DD100] text-white w-full btn" disabled>Next</button>
                         <div class="flex justify-between">
                             <p class="text-base underline opacity-65 font-semibold">Terms and Conditions</p>
                             <p class="text-base opacity-65 underline font-semibold">Cancellation Policy</p>
                         </div>
-                    </div>
+                    </form>
                 </div>
 
             </div>
@@ -390,21 +395,27 @@
 
     <!-- End of the main Section -->
 
-    <section id="modal" class=" bg-[#F7F8F8] py-40 hidden">
-        <div class=" bg-white w-[718px] mx-auto p-14 rounded-2xl text-center">
+    <!-- You can open the modal using ID.showModal() method -->
+    <dialog id="my_modal_5" class="modal modal-bottom ">
+        <div class="modal-box bg-white w-[718px] mx-auto p-14 rounded-2xl text-center">
             <img class="w-[100px] mx-auto" src="images/success.png" alt="">
             <h4 class="uppercase text-[#27AE60] my-10 text-2xl font-bold">success</h4>
             <p class="text-[#4A4A4A] text-xl font-medium">Thank you for Booking Our Bus Seats.
                 We are working hard to find the best service and deals for you. <br> <br>
-                <span class=" font-light">Shortly you will find a confirmation in your email.</span>
+                <span class="font-light">Shortly you will find a confirmation in your email.</span>
             </p>
-            <button class="btn bg-[#27AE60] text-white px-40 py-4 rounded-3xl mt-4">Continue</button>
+            <form method="dialog">
+            <!-- if there is a button in form, it will close the modal -->
+                <button class="btn bg-[#27AE60] text-white px-40 py-4 rounded-3xl mt-4">Continue</button>
+            </form>
         </div>
-    </section>
+    </dialog>
+
+
 
     <!-- start footer section -->
 
-    <footer id="footer" class=" hidden p-24 bg-[#030712] text-white ">
+    <footer id="footer" class=" p-24 bg-[#030712] text-white ">
         <section class="flex justify-between">
             <div>
                 <h1 class="font-bold text-3xl mt-4 mb-4">P-Ticket</h1>
@@ -433,7 +444,7 @@
     </footer>
 
     <script src="script/utility.js"></script>
-    <script src="script/ticket.js"></script>
+    <script src="script/bus.js"></script>
 
 </body>
 
